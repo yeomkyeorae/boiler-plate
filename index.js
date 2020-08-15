@@ -7,21 +7,20 @@ const { User } = require("./models/User");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
+const config = require("./config/key");
+
 // application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 // application/json
 app.use(bodyParser.json());
 
 mongoose
-  .connect(
-    "mongodb+srv://yeomkyeorae:@boiler-plate.wej1c.mongodb.net/<dbname>?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false
-    }
-  )
+  .connect(config.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  })
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
