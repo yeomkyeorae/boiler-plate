@@ -52,6 +52,14 @@ userSchema.pre("save", function(next) {
   }
 }); // user 정보를 저장하기 전에 콜백을 실행하게
 
+userSchema.methods.comparePassword = function(plainPassword, cb) {
+  // plain password 12345     암호화된 비밀번호 2jkjf823u84*#$*@&#$ 같은지 체크
+  bcrypt.compare(plainPassword, this.password, function(err, isMatch) {
+    if (err) return cb(err);
+    cb(null, isMatch);
+  });
+};
+
 const User = mongoose.model("User", userSchema);
 
 module.exports = {
