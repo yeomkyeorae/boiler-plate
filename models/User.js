@@ -73,7 +73,7 @@ userSchema.methods.generateToken = function(cb) {
   });
 };
 
-userSchema.static.findByToken = function(token, cb) {
+userSchema.statics.findByToken = function(token, cb) {
   let user = this;
 
   // 토큰을 복호화한다.
