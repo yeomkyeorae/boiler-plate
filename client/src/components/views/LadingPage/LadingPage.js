@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
 
 function LadingPage(props) {
   useEffect(() => {
@@ -34,4 +35,4 @@ function LadingPage(props) {
   );
 }
 
-export default LadingPage;
+export default withRouter(LadingPage);
