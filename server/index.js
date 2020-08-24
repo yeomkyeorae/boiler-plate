@@ -7,8 +7,8 @@ const { auth } = require("./middleware/auth");
 
 const bodyParser = require("body-parser");
 
-const cors = require("cors");
-const cors_origin = ["http://localhost:3000"];
+// const cors = require("cors");
+// const cors_origin = ["http://localhost:3000"];
 
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
@@ -21,12 +21,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use(
-  cors({
-    origin: cors_origin, // 허락하고자 하는 요청주소
-    credentials: true // true로 하면 설정한 내용을 response 헤더에 추가함.
-  })
-);
+// app.use(
+//   cors({
+//     origin: cors_origin, // 허락하고자 하는 요청주소
+//     credentials: true // true로 하면 설정한 내용을 response 헤더에 추가함.
+//   })
+// );
 
 mongoose
   .connect(config.mongoURI, {
