@@ -1,3 +1,4 @@
+// for preventing from cors error
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = function(app) {

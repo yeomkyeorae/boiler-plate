@@ -8,7 +8,6 @@ export default function(state = {}, action) {
       return { ...state, register: action.payload };
     case AUTH_USER:
       return { ...state, userData: action.payload };
-      break;
     default:
       return state;
   }

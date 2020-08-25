@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+
+// for design by CSS
 import "antd/dist/antd.css";
-import { Provider } from "react-redux";
+
+// Redux?
 import { applyMiddleware, createStore } from "redux";
+import { Provider } from "react-redux";
 import promiseMiddleware from "redux-promise";
 import ReduxThunk from "redux-thunk";
 import Reducer from "./_reducers";
